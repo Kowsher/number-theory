@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define N 1000000 /* We can find prime number when the range is maximum 100000000*/
+
+int num[N];
+
+int prime( )
+{
+    int i,j,sq;
+
+    sq=sqrt(N);
+
+    for(i=4; i<=N; i+=2){
+        num[i] =1;
+    }
+
+    for(i=3; i<=sq; i+=2){
+
+        if(num[i]==0){
+            for(j=i*i; j<=N; j+=i)
+                num[j]=1;
+        }
+    }
+
+    num[1]=1;
+
+}
+int main()
+{
+    prime( );
+ int i;
+    for(i=1; i<=1000; i++) /*Here I print some prime numbers between 1000*/
+    {
+        if(num[i]==0)
+            cout<<i<<endl;
+    }
+
+    return 0;
+}
