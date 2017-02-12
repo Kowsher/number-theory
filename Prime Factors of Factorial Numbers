@@ -1,0 +1,26 @@
+///if u'r asked to omit how many prime number m has in n!
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    int cont=0;
+    for(int i=m; i<=n; ){
+            cont=cont+(n/i);
+
+            i=i*m;
+    }
+    if(cont)cout<<cont<<endl;
+    else cout<<"there is not prime fector "<<endl;
+
+
+
+
+
+
+    return 0;
+}
