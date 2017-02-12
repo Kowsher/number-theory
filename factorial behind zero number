@@ -1,0 +1,24 @@
+///if u'r asked to omit number of zero of a factorial like 100!
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+    int n;
+    cin>>n;
+    int cont=0;
+    for(int i=5; i<=n; ){
+            if(n%i==0){cont=cont+(n/i);}
+            i=i*5;
+    }
+    if(cont)cout<<cont<<endl;
+    else cout<<"there is not zero"<<endl;
+
+
+
+
+
+    return 0;
+}
