@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+set<int>s;
+int divisiors(int n){
+    if(n<=1)return 0;
+    s.insert(1);
+    for(int i=2; i<=sqrt(n); i++){
+        if(n%i==0){
+            s.insert(i);
+            s.insert(n/i);
+        }
+    }
+    return 0;
+}
+int main()
+{
+    int n;
+    cout<<"Enter the number to get divisors ";
+    cin>>n;
+    divisiors(n);
+    for(int i: s)cout<<i<<" ";
+
+    return 0;
+}
