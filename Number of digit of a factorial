@@ -1,0 +1,21 @@
+///if u'r asked to omit how many prime number m has in n!
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+    int n;
+    cin>>n;
+    float ck=0;
+
+    for(int i=1; i<=n; i++){
+        ck=ck+log10(i);
+    }
+    cout<<floor(ck)<<endl;
+
+
+
+    return 0;
+}
