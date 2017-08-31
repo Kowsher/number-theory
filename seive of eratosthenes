@@ -3,50 +3,45 @@ using namespace std;
 #define N 1000000 /* We can find prime number when the range is maximum 100000000*/
 
 int num[N];
-int strt,en,begn,sq,s;
-void ck()
-{
-    if(strt%2==0)begn=strt;
-    else begn = strt-1;
-    if(strt<3)begn=4;
-    if(strt<9)s=3;
-    else s=sqrt(strt);
+int strt,en,sq,be;
 
-
-}
 void prime( )
 {
-    int i,j;
-
     sq=sqrt(en);
 
+    if(strt%2==0)be=strt+1;
+    else be=strt;
 
-    for(i=begn; i<=en; i+=2){
+    for(int i=be-1; i<=en; i+=2){
         num[i] =1;
     }
 
-    for(i=s; i<=sq; i+=2){
+    for(int i=3; i<=sq; i+=2){
 
         if(num[i]==0){
-            for(j=i*i; j<=N; j+=i)
+            for(int j=i*i; j<=N; j+=i)
                 num[j]=1;
         }
+
     }
 
-    num[1]=1;
+    num[1]=1;num[2]=0;
+    cout<<"2"<<endl;
+     for(int i=be; i<=en; i+=2)
+    {
+
+        if(num[i]==0)
+            cout<<i<<endl;
+    }
+
 
 }
 int main()
 {
     cin>>strt>>en;
-    ck();
+
+
     prime( );
- int i;
-    for(i=strt; i<=en; i++) /*Here I print some prime numbers between 1000*/
-    {
-        if(num[i]==0)
-            cout<<i<<endl;
-    }
 
     return 0;
 }
