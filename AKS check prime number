@@ -28,8 +28,8 @@ int main()
 {
     int n;
     cin>>n;
-    if(!isprime(n))cout<<"this is prime "<<endl;
-    else cout<<"Not prime "<<endl;
+    if(!isprime(n))cout<<"not prime "<<endl;
+    else cout<<"prime "<<endl;
 
 
 
